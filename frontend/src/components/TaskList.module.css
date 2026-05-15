@@ -1,18 +1,18 @@
 .title {
-    font: var(--font-heading);
+  font: var(--font-heading);
 }
 
 .itemContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
 }
 
 .topMargin {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .errorModalText {
-    color: var(--color-tse-navy-blue);
+  color: var(--color-tse-navy-blue);
 }

@@ -1,4 +1,4 @@
-import { get, handleAPIError, post } from "src/api/requests";
+import { get, handleAPIError, post, put } from "src/api/requests";
 
 import type { APIResult } from "src/api/requests";
 
@@ -101,6 +101,17 @@ export async function getAllTasks(): Promise<APIResult<Task[]>> {
     const json = (await response.json()) as TaskJSON[];
     const parsedTasks = json.map((taskJSON) => parseTask(taskJSON));
     return { success: true, data: parsedTasks };
+  } catch (error) {
+    return handleAPIError(error);
+  }
+}
+
+export async function updateTask(task: UpdateTaskRequest): Promise<APIResult<Task>> {
+  try {
+    const response = await put(`/api/task/${task._id}`, task);
+    const json = (await response.json()) as TaskJSON;
+    const updatedTask = parseTask(json);
+    return { success: true, data: updatedTask };
   } catch (error) {
     return handleAPIError(error);
   }
