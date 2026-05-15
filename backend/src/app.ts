@@ -7,7 +7,7 @@ import cors from "cors";
 import express from "express";
 import { isHttpError } from "http-errors";
 import taskRoutes from "src/routes/task";
-import tasksRoutes from "src/routes/tasks"; 
+import tasksRoutes from "src/routes/tasks";
 
 import type { NextFunction, Request, Response } from "express";
 
